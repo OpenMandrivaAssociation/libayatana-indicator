@@ -5,7 +5,7 @@
 
 Name:		libayatana-indicator
 Version:	0.6.3
-Release:	%mkrel 1
+Release:	1
 Summary:	Ayatana panel indicator applet libraries
 License:	GPLv3
 Group:		System/Libraries
