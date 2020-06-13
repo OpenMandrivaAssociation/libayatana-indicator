@@ -11,7 +11,7 @@ License:	GPLv3
 Group:		System/Libraries
 URL:		https://ayatanaindicators.github.io/
 Source0:	https://github.com/AyatanaIndicators/libayatana-indicator/archive/%{version}/%{name}-%{version}.tar.gz
-#Patch0:		libayatana-indicator-Wno-error-deprecated-declarations.patch
+Patch0:		libayatana-indicator-Wno-error-deprecated-declarations.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -68,6 +68,7 @@ Header files for development with %{name}3 (GTK+3).
 NOCONFIGURE=1 ./autogen.sh
 %configure \
 	--disable-static \
+	--disable-tests	\
 	--with-gtk=3
 %make_build
 
