@@ -64,8 +64,6 @@ Header files for development with %{name}3 (GTK+3).
 
 %build
 export CFLAGS="$RPM_OPT_FLAGS -Wno-error=gnu-designator"
-#export CC=gcc
-#export CXX=g++
 
 NOCONFIGURE=1 ./autogen.sh
 %configure \
