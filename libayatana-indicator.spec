@@ -21,6 +21,7 @@ BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libayatana-ido3-0.4)
+BuildRequires:  pkgconfig(libsystemd)
 
 %description
 This library contains information to build indicators to go into
@@ -62,8 +63,7 @@ Header files for development with %{name}3 (GTK+3).
 %autosetup -p1
 
 %build
-#export CC=gcc
-#export CXX=g++
+export CFLAGS="$RPM_OPT_FLAGS -Wno-error=gnu-designator"
 
 NOCONFIGURE=1 ./autogen.sh
 %configure \
