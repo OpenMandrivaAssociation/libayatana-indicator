@@ -21,6 +21,7 @@ BuildRequires:	pkgconfig(gio-2.0)
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk+-3.0)
 BuildRequires:	pkgconfig(libayatana-ido3-0.4)
+BuildRequires:  pkgconfig(libsystemd)
 
 %description
 This library contains information to build indicators to go into
