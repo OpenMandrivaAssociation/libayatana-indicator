@@ -83,7 +83,7 @@ find %{buildroot} -name 'libdummy-indicator*' -delete
 %files tools
 %license COPYING
 %doc AUTHORS ChangeLog
-%{_userunitdir}/ayatana-indicators-pre.target
+#{_userunitdir}/ayatana-indicators-pre.target
 %{_libexecdir}/ayatana-indicator-loader3
 %{_datadir}/%{name}/
 
