@@ -4,14 +4,14 @@
 %define develname	%mklibname ayatana-indicator3 -d
 
 Name:		libayatana-indicator
-Version:	0.6.3
+Version:	0.8.1
 Release:	1
 Summary:	Ayatana panel indicator applet libraries
 License:	GPLv3
 Group:		System/Libraries
 URL:		https://ayatanaindicators.github.io/
 Source0:	https://github.com/AyatanaIndicators/libayatana-indicator/archive/%{version}/%{name}-%{version}.tar.gz
-Patch0:		libayatana-indicator-Wno-error-deprecated-declarations.patch
+#Patch0:		libayatana-indicator-Wno-error-deprecated-declarations.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	libtool
@@ -83,7 +83,7 @@ find %{buildroot} -name 'libdummy-indicator*' -delete
 %files tools
 %license COPYING
 %doc AUTHORS ChangeLog
-%{_userunitdir}/ayatana-indicators-pre.target
+%{_prefix}/lib/systemd/user/ayatana-indicators.target
 %{_libexecdir}/ayatana-indicator-loader3
 %{_datadir}/%{name}/
 
