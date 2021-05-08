@@ -1,4 +1,4 @@
-%define debug_package %{nil}
+#define debug_package %{nil}
 %define api		0.4
 %define major		7
 %define libname		%mklibname ayatana-indicator3_ %{major}
