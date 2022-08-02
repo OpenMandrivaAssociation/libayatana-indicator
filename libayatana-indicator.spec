@@ -78,8 +78,8 @@ find %{buildroot} -name 'libdummy-indicator*' -delete
 %files tools
 %license COPYING
 %doc AUTHORS ChangeLog
-%{_prefix}/lib/systemd/user/ayatana-indicators.target
-%{_libexecdir}/ayatana-indicator-loader3
+#{_prefix}/lib/systemd/user/ayatana-indicators.target
+#{_libexecdir}/ayatana-indicator-loader3
 %{_datadir}/%{name}/
 
 %files -n %{libname}
