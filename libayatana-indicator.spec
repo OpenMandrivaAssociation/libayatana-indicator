@@ -5,17 +5,15 @@
 %define develname	%mklibname ayatana-indicator3 -d
 
 Name:		libayatana-indicator
-Version:	0.8.4
-Release:	2
+Version:	0.9.1
+Release:	1
 Summary:	Ayatana panel indicator applet libraries
 License:	GPLv3
 Group:		System/Libraries
 URL:		https://ayatanaindicators.github.io/
 Source0:	https://github.com/AyatanaIndicators/libayatana-indicator/archive/%{version}/%{name}-%{version}.tar.gz
-#Patch0:		libayatana-indicator-Wno-error-deprecated-declarations.patch
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	libtool
+
+BuildRequires:	cmake
 BuildRequires:	mate-common
 BuildRequires:	pkgconfig(dbus-glib-1)
 BuildRequires:	pkgconfig(gio-2.0)
@@ -66,15 +64,11 @@ Header files for development with %{name}3 (GTK+3).
 %build
 export CFLAGS="$RPM_OPT_FLAGS -Wno-error=gnu-designator"
 
-NOCONFIGURE=1 ./autogen.sh
-%configure \
-	--disable-static \
-	--disable-tests	\
-	--with-gtk=3
+%cmake
 %make_build
 
 %install
-%make_install
+%make_install -C build
 
 find %{buildroot} -name '*.la' -delete
 
@@ -84,8 +78,8 @@ find %{buildroot} -name 'libdummy-indicator*' -delete
 %files tools
 %license COPYING
 %doc AUTHORS ChangeLog
-%{_prefix}/lib/systemd/user/ayatana-indicators.target
-%{_libexecdir}/ayatana-indicator-loader3
+#{_prefix}/lib/systemd/user/ayatana-indicators.target
+%{_libexecdir}/libayatana-indicator/ayatana-indicator-loader3
 %{_datadir}/%{name}/
 
 %files -n %{libname}
