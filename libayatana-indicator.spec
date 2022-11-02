@@ -5,7 +5,7 @@
 %define develname	%mklibname ayatana-indicator3 -d
 
 Name:		libayatana-indicator
-Version:	0.9.2
+Version:	0.9.3
 Release:	1
 Summary:	Ayatana panel indicator applet libraries
 License:	GPLv3
